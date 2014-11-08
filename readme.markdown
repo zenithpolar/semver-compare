@@ -4,6 +4,8 @@ compare two semver version strings, returning -1, 0, or 1
 
 The return value can be fed straight into `[].sort`.
 
+[![build status](https://secure.travis-ci.org/substack/semver-compare.png)](http://travis-ci.org/substack/semver-compare)
+
 # example
 
 ``` js
