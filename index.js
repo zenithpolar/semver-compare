@@ -1,7 +1,6 @@
-module.exports = function cmp (a, b, f) {
-    if (!f) f = function (x) { return x };
-    var pa = f(a).split('.');
-    var pb = f(b).split('.');
+module.exports = function cmp (a, b) {
+    var pa = a.split('.');
+    var pb = b.split('.');
     for (var i = 0; i < 3; i++) {
         var na = Number(pa[i]);
         var nb = Number(pb[i]);
