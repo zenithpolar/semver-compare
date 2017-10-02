@@ -1,5 +1,7 @@
-module.exports = return (separators=['\\.','-']) => {
-    function cmp (a, b) {
+const DEFAULT_SEPARATORS = ['\\.','-'];
+
+function newComparer (separators=DEFAULT_SEPARATORS) {
+    return (a,b) => {
         let splitter = new RegExp(separators.join('|'), 'g');
         let pa = a.split(splitter);
         let pb = b.split(splitter);
@@ -18,5 +20,14 @@ module.exports = return (separators=['\\.','-']) => {
             return -1;
         }
         return 0;
-    };
+    }
+}
+
+function cmp (a,b){
+    return newComparer()(a,b)
+}
+
+module.exports ={ 
+    newComparer: newComparer,
+    cmp: cmp
 }
