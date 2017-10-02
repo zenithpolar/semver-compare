@@ -4,12 +4,14 @@ compare two semver version strings, returning -1, 0, or 1
 
 The return value can be fed straight into `[].sort`.
 
+You can pass it a separators parameter which is an array of symbols to match as split points, mind to escape regex special symbols with \\, as of: ["\\.", "-"]
+
 [![build status](https://secure.travis-ci.org/substack/semver-compare.png)](http://travis-ci.org/substack/semver-compare)
 
 # example
 
 ``` js
-var cmp = require('semver-compare');
+var cmp = require('semver-compare-multi');
 var versions = [
     '1.2.3',
     '4.11.6',
@@ -55,7 +57,7 @@ whereas the default lexicographic sort (`versions.sort()`) would be:
 # methods
 
 ```
-var cmp = require('semver-compare')
+var cmp = require('semver-compare-multi')
 ```
 
 ## cmp(a, b)
@@ -69,7 +71,7 @@ If `a` equals `b`, return 0;
 With [npm](https://npmjs.org) do:
 
 ```
-npm install semver-compare
+npm install semver-compare-multi
 ```
 
 # license
