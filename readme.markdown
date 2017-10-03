@@ -4,7 +4,7 @@ Compare two semver version strings, returning -1, 0, or 1
 
 The return value of **cmp** can be fed straight into `[].sort`.
 
-You can pass **newComparer** an array of characters to match as split points, mind to escape regex special symbols with \\\, as of: newComparer(["\\\.", "-"])
+You can pass **newComparer** an array of characters to match as split points, mind to escape regex special symbols with `\\`, as of: `newComparer(["\\.", "-"])`
 
 [![build status](https://travis-ci.org/zenithpolar/semver-compare.svg?branch=master)](https://travis-ci.org/zenithpolar/semver-compare)
 
