@@ -1,17 +1,17 @@
-# semver-compare
+# semver-compare-multi
 
-compare two semver version strings, returning -1, 0, or 1
+Compare two semver version strings, returning -1, 0, or 1
 
-The return value can be fed straight into `[].sort`.
+The return value of **cmp** can be fed straight into `[].sort`.
 
-You can pass it a separators parameter which is an array of symbols to match as split points, mind to escape regex special symbols with \\, as of: ["\\.", "-"]
+You can pass **newComparer** an array of characters to match as split points, mind to escape regex special symbols with \\, as of: newComparer(["\\.", "-"])
 
-[![build status](https://secure.travis-ci.org/substack/semver-compare.png)](http://travis-ci.org/substack/semver-compare)
+[![build status](https://travis-ci.org/zenithpolar/semver-compare.svg?branch=master)](https://travis-ci.org/zenithpolar/semver-compare)
 
 # example
 
 ``` js
-var cmp = require('semver-compare-multi');
+import { cmp } from "semver-compare-multi";
 var versions = [
     '1.2.3',
     '4.11.6',
@@ -26,38 +26,56 @@ var versions = [
 console.log(versions.sort(cmp).join('\n'));
 ```
 
+*Or*
+
+``` js
+import { newComparer } from "semver-compare-multi";
+var versions = [
+    '1.2-3',
+    '4.11_6',
+    '4.2_0',
+    '1.5-19',
+    '1.5-5',
+    '4.1-3',
+    '2.3_1',
+    '10.5_5',
+    '11.3_0'
+];
+console.log(versions.sort(newComparer(["\\.", "-", "_"])).join('\n'));
+```
+
 prints:
 
 ```
-1.2.3
-1.5.5
-1.5.19
-2.3.1
-4.1.3
-4.2.0
-4.11.6
-10.5.5
-11.3.0
+1.2-3
+1.5-5
+1.5-19
+2.3_1
+4.1-3
+4.2_0
+4.11_6
+10.5_5
+11.3_0
 ```
 
 whereas the default lexicographic sort (`versions.sort()`) would be:
 
 ```
-1.2.3
-1.5.19
-1.5.5
-10.5.5
-11.3.0
-2.3.1
-4.1.3
-4.11.6
-4.2.0
+1.2-3
+1.5-19
+1.5-5
+10.5_5
+11.3_0
+2.3_1
+4.1-3
+4.11_6
+4.2_0
 ```
 
 # methods
 
 ```
-var cmp = require('semver-compare-multi')
+import { cmp, newComparer } from "semver-compare-multi";
 ```
 
 ## cmp(a, b)
@@ -65,6 +83,8 @@ var cmp = require('semver-compare-multi')
 If the semver string `a` is greater than `b`, return `1`.
 If the semver string `b` is greater than `a`, return `-1`.
 If `a` equals `b`, return 0;
+
+*It is the same as newComparer(), which returns an cmp(a, b) with "." and "-" default separators.*
 
 # install
 
