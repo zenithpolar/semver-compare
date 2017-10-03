@@ -1,4 +1,4 @@
-import { cmp } from '../';
+var cmp = require('../').cmp;
 var test = require('tape');
 
 var versions = [
