@@ -2,9 +2,11 @@
 
 Compare two semver version strings, returning -1, 0, or 1
 
+They don't need to be strict x.y.z formated strings, the size is automaticaly checked. As the size is dynamic, comparing `cmp("1.0.0", "1.0.0.1")`returns -1, that is, the longer version is considered greater.
+
 The return value of **cmp** can be fed straight into `[].sort`.
 
-You can pass **newComparer** an array of characters to match as split points, mind to escape regex special symbols with `\\`, as of: `newComparer(["\\.", "-"])`
+You can pass **newComparer**, which returns an `cmp(a,b)`, an array of characters to match as split points, mind to escape regex special symbols with `\\`, as of: `newComparer(["\\.", "-"])`
 
 [![build status](https://travis-ci.org/zenithpolar/semver-compare.svg?branch=master)](https://travis-ci.org/zenithpolar/semver-compare)
 
