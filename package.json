@@ -1,7 +1,7 @@
 {
   "name": "semver-compare-multi",
-  "version": "1.0.2",
-  "description": "compare two semver version strings, returning -1, 0, or 1",
+  "version": "1.0.3",
+  "description": "Compare two semver version strings with variable length and cutomizable separators, returning -1, 0, or 1",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
