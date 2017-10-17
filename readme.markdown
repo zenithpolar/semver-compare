@@ -96,6 +96,10 @@ With [npm](https://npmjs.org) do:
 npm install semver-compare-multi
 ```
 
+# donate
+
+[!Much Dogecoin](https://i.imgur.com/KVdSj76.png)
+
 # license
 
 MIT
