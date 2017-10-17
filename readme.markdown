@@ -100,7 +100,7 @@ npm install semver-compare-multi
 
 ### Dogecoin
 ![Much Dogecoin](https://i.imgur.com/KVdSj76.png)
-
+DJpowRCi6jLdyokjt1fq4X8HGB3HXM6NXG
 # license
 
 MIT
