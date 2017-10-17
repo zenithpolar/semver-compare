@@ -98,7 +98,7 @@ npm install semver-compare-multi
 
 # donate
 
-## Dogecoin
+### Dogecoin
 ![Much Dogecoin](https://i.imgur.com/KVdSj76.png)
 
 # license
